@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "contract_kind": "execution_result",
+  "created_at": "2026-04-28T00:05:00Z",
+  "metadata": {"result_id": "ers-001"},
+  "request_id": "erq-001",
+  "ok": true,
+  "status": "succeeded",
+  "artifacts": [
+    {"artifact_type": "output", "uri": "s3://bucket/release-notes.md", "description": "Generated markdown output"}
+  ],
+  "diagnostics": {"duration_ms": 1832}
+}

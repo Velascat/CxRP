@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "contract_kind": "execution_result",
+  "created_at": "2026-04-28T00:05:00Z",
+  "metadata": {"result_id": "erf-001"},
+  "request_id": "erq-002",
+  "ok": false,
+  "status": "failed",
+  "artifacts": [
+    {"artifact_type": "diagnostic", "uri": "s3://bucket/errors/erq-002.log", "description": "Failure diagnostics"}
+  ],
+  "diagnostics": {"error_code": "TIMEOUT", "message": "Execution timed out"}
+}

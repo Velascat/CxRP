@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "contract_kind": "lane_decision",
+  "created_at": "2026-04-28T00:01:00Z",
+  "metadata": {"decision_id": "ld-001", "producer": "SwitchBoard"},
+  "task_id": "tp-001",
+  "lane": "coding_agent",
+  "rationale": "Task requires deterministic code-edit behavior.",
+  "confidence": 0.92,
+  "alternatives": ["review_agent"]
+}

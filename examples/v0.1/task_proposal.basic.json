@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1",
+  "contract_kind": "task_proposal",
+  "created_at": "2026-04-28T00:00:00Z",
+  "metadata": {"proposal_id": "tp-001", "source": "OperatorConsole"},
+  "title": "Draft release notes",
+  "objective": "Produce a concise release note draft from provided change summary.",
+  "constraints": ["max 300 words"],
+  "requested_inputs": {"change_summary_uri": "s3://bucket/changes.md"}
+}

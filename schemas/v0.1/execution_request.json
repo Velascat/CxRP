@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExecutionRequest",
+  "type": "object",
+  "required": ["schema_version", "contract_kind", "metadata", "task_id", "lane_decision_id", "scope"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "contract_kind": {"const": "execution_request"},
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "metadata": {"type": "object"},
+    "task_id": {"type": "string"},
+    "lane_decision_id": {"type": "string"},
+    "scope": {"type": "string"},
+    "input_payload": {"type": "object"},
+    "constraints": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

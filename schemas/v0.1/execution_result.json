@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExecutionResult",
+  "type": "object",
+  "required": ["schema_version", "contract_kind", "metadata", "request_id", "ok", "status"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "contract_kind": {"const": "execution_result"},
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "metadata": {"type": "object"},
+    "request_id": {"type": "string"},
+    "ok": {"type": "boolean"},
+    "status": {"type": "string", "enum": ["pending", "running", "succeeded", "failed", "cancelled"]},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_type", "uri"],
+        "properties": {
+          "artifact_type": {"type": "string", "enum": ["input", "output", "log", "diagnostic"]},
+          "uri": {"type": "string"},
+          "description": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "diagnostics": {"type": "object"}
+  },
+  "additionalProperties": false
+}

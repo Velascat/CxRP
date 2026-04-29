@@ -10,3 +10,4 @@ class LaneType(str, Enum):
     REVIEW_AGENT = "review_agent"
     LOCAL_MODEL = "local_model"
     HOSTED_MODEL = "hosted_model"
+    AIDER_LOCAL = "aider_local"

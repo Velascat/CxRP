@@ -62,8 +62,8 @@ Current revision: **v0.2** (active). Frozen prior revision: **v0.1** (retained o
 
 ## Inter-system Relationship
 
-- OperatorConsole emits or captures `TaskProposal` and `ExecutionResult`-shaped data via `operator_console.ecp_capture`.
-- SwitchBoard consumes `TaskProposal` and emits `LaneDecision` only; the wire shape is produced by `switchboard.adapters.ecp_mapper`.
+- OperatorConsole emits or captures `TaskProposal` and `ExecutionResult`-shaped data via `operator_console.cxrp_capture`.
+- SwitchBoard consumes `TaskProposal` and emits `LaneDecision` only; the wire shape is produced by `switchboard.adapters.cxrp_mapper`.
 - OperationsCenter consumes `TaskProposal` + `LaneDecision`, builds `ExecutionRequest`, and consumes `ExecutionResult`. OC has its own internal Pydantic subtype with stricter narrowing — `operations_center.contracts.cxrp_mapper` translates between OC's subtype and the CxRP envelope at the boundary.
 
 ### Subtype pattern

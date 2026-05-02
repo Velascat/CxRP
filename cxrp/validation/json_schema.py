@@ -20,7 +20,7 @@ SCHEMA_FILE_MAP = {
 
 def load_schema(contract_kind: str) -> dict[str, Any]:
     schema_path = SCHEMA_ROOT / SCHEMA_FILE_MAP[contract_kind]
-    return json.loads(schema_path.read_text())
+    return json.loads(schema_path.read_text(encoding="utf-8"))
 
 
 def validate_contract(contract_kind: str, payload: dict[str, Any]) -> None:
@@ -38,7 +38,7 @@ def load_payload_schema(payload_schema_id: str) -> dict[str, Any]:
     if not name or not version.startswith("v"):
         raise ValueError(f"invalid payload schema id: {payload_schema_id!r}")
     schema_path = SCHEMA_ROOT.parent / version / "payloads" / f"{name}.schema.json"
-    return json.loads(schema_path.read_text())
+    return json.loads(schema_path.read_text(encoding="utf-8"))
 
 
 def validate_payload(payload_schema_id: str, payload: dict[str, Any]) -> None:

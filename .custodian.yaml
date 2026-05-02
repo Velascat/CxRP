@@ -24,6 +24,10 @@ audit:
       # validate_contract() / validate_payload() return None and raise ValidationError
       # on failure — "should not raise" tests are correctly assertion-free.
       - tests/test_contracts.py
+    T1:
+      # BaseContract is an abstract base serialized via asdict() — it is always
+      # used through its concrete subclasses, never instantiated directly in tests.
+      - cxrp/contracts/common.py
 
 
 tools:

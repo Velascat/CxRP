@@ -7,6 +7,13 @@ tests_root: tests
 # `_custodian/` overlay layer (see OperationsCenter for a worked example).
 
 audit:
+  # K1 suppressions: `claude_cli` appears in README as an example string ("e.g. `claude_cli`")
+  # within an executor enumeration context — not a Python function reference.
+  common_words:
+    - claude_cli
+    - coding_agent
+    - review_agent
+
   # F1 exemptions: these fields are in nested contract dataclasses (Artifact,
   # LaneAlternative, ExecutionLimits) that lack their own to_dict() but are
   # recursively serialized via asdict() from their parent BaseContract subclass.

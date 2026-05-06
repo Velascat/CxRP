@@ -8,6 +8,7 @@ from typing import Any, Optional
 from cxrp.contracts.common import BaseContract, ExecutionLimits
 from cxrp.contracts.execution_target import ExecutionTargetEnvelope
 from cxrp.contracts.runtime_binding import RuntimeBinding
+from cxrp.vocabulary.executor import BackendName, ExecutorName
 from cxrp.vocabulary.lane import LaneType
 
 
@@ -18,8 +19,8 @@ class ExecutionRequest(BaseContract):
     proposal_id: str = ""
     lane_decision_id: str = ""
     lane: LaneType = LaneType.CODING_AGENT
-    executor: Optional[str] = None
-    backend: Optional[str] = None
+    executor: Optional[ExecutorName] = None
+    backend: Optional[BackendName] = None
     scope: str = ""
     input_payload: dict[str, Any] = field(default_factory=dict)
     input_payload_schema: Optional[str] = None

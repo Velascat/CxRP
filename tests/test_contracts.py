@@ -27,19 +27,20 @@ from cxrp.vocabulary.artifact import ArtifactKind
 from cxrp.vocabulary.lane import LaneType
 from cxrp.vocabulary.status import ExecutionStatus
 
-EXAMPLES_DIR = Path("examples/v0.2")
+EXAMPLES_DIR = Path("examples/v0.3")
 
 
 def test_models_import_and_construct():
+    from cxrp.contracts import BackendName, ExecutorName
     tp = TaskProposal(proposal_id="tp-1", title="T", objective="O")
     ld = LaneDecision(
         decision_id="ld-1",
         proposal_id="tp-1",
         lane=LaneType.CODING_AGENT,
-        executor="claude_cli",
-        backend="kodo",
+        executor=ExecutorName.CLAUDE_CLI,
+        backend=BackendName.KODO,
         alternatives=[
-            LaneAlternative(lane=LaneType.CODING_AGENT, executor="codex_cli", confidence=0.4)
+            LaneAlternative(lane=LaneType.CODING_AGENT, executor=ExecutorName.CODEX_CLI, confidence=0.4)
         ],
     )
     erq = ExecutionRequest(
@@ -62,7 +63,7 @@ def test_models_import_and_construct():
     assert ld.contract_kind == "lane_decision"
     assert erq.contract_kind == "execution_request"
     assert ers.contract_kind == "execution_result"
-    assert tp.schema_version == "0.2"
+    assert tp.schema_version == "0.3"
 
 
 def test_examples_validate_against_json_schema():
@@ -77,7 +78,7 @@ def test_roundtrip_serialization_dict_shape():
     )
     payload = result.to_dict()
 
-    assert payload["schema_version"] == "0.2"
+    assert payload["schema_version"] == "0.3"
     assert payload["contract_kind"] == "execution_result"
     assert payload["status"] == "failed"
 
@@ -120,11 +121,17 @@ def test_lane_alternative_confidence_bounds_enforced():
         LaneAlternative(lane=LaneType.CODING_AGENT, confidence=1.5)
 
 
-def test_executor_and_backend_are_open_strings_at_envelope_level():
+def test_executor_and_backend_are_typed_enums_in_v0_3():
+    """Schema 0.3 — closed-system simplification: backend/executor are
+    typed enums on the wire. Unknown values fail at validation."""
     payload = json.loads((EXAMPLES_DIR / "lane_decision.basic.json").read_text())
     payload["executor"] = "some_future_tool_we_dont_know_yet"
+    with pytest.raises(ValidationError):
+        validate_contract("lane_decision", payload)
+    payload["executor"] = "claude_cli"  # restore
     payload["backend"] = "some_future_dispatch_we_dont_know_yet"
-    validate_contract("lane_decision", payload)
+    with pytest.raises(ValidationError):
+        validate_contract("lane_decision", payload)
 
 
 def test_artifact_kind_is_open_string_at_envelope_level():

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExecutionRequest",
+  "type": "object",
+  "required": ["schema_version", "contract_kind", "request_id", "proposal_id", "metadata", "lane_decision_id", "lane", "scope"],
+  "properties": {
+    "schema_version": {"const": "0.3"},
+    "contract_kind": {"const": "execution_request"},
+    "request_id": {"type": "string"},
+    "proposal_id": {"type": "string"},
+    "created_at": {"type": ["string", "null"], "format": "date-time"},
+    "metadata": {"type": "object"},
+    "lane_decision_id": {"type": "string"},
+    "lane": {"type": "string", "enum": ["coding_agent", "review_agent", "local_model", "hosted_model", "aider_local"]},
+    "executor": {"type": ["string", "null"], "enum": ["claude_cli", "codex_cli", "aider_local", null]},
+    "backend": {"type": ["string", "null"], "enum": ["direct_local", "aider_local", "kodo", "archon", "archon_then_kodo", "openclaw", null]},
+    "scope": {"type": "string"},
+    "input_payload": {"type": "object"},
+    "input_payload_schema": {"type": ["string", "null"]},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "limits": {
+      "type": ["object", "null"],
+      "properties": {
+        "max_changed_files": {"type": ["integer", "null"], "minimum": 0},
+        "timeout_seconds": {"type": ["integer", "null"], "minimum": 0},
+        "require_clean_validation": {"type": ["boolean", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "runtime_binding": {
+      "type": ["object", "null"],
+      "properties": {
+        "kind": {"type": "string", "enum": [
+          "backend_default", "cli_subscription", "local_model_server",
+          "hosted_api", "containerized_runtime", "human"
+        ]},
+        "selection_mode": {"type": "string", "enum": [
+          "backend_default", "policy_selected", "explicit_request"
+        ]},
+        "model": {"type": ["string", "null"]},
+        "provider": {"type": ["string", "null"]},
+        "endpoint": {"type": ["string", "null"]},
+        "config_ref": {"type": ["string", "null"]}
+      },
+      "required": ["kind", "selection_mode"],
+      "additionalProperties": false
+    },
+    "execution_target": {
+      "type": ["object", "null"],
+      "properties": {
+        "lane": {"type": "string", "enum": ["coding_agent", "review_agent", "local_model", "hosted_model", "aider_local"]},
+        "backend": {"type": ["string", "null"], "enum": ["direct_local", "aider_local", "kodo", "archon", "archon_then_kodo", "openclaw", null]},
+        "executor": {"type": ["string", "null"], "enum": ["claude_cli", "codex_cli", "aider_local", null]},
+        "runtime_binding": {"type": ["object", "null"]}
+      },
+      "required": ["lane"],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

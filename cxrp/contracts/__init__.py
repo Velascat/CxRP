@@ -8,14 +8,17 @@ from cxrp.contracts.execution_target import ExecutionTargetEnvelope
 from cxrp.contracts.lane_decision import LaneAlternative, LaneDecision
 from cxrp.contracts.runtime_binding import RuntimeBinding
 from cxrp.contracts.task_proposal import TaskProposal
+from cxrp.vocabulary.executor import BackendName, ExecutorName
 
 __all__ = [
     "Artifact",
+    "BackendName",
     "Evidence",
     "ExecutionLimits",
     "ExecutionRequest",
     "ExecutionResult",
     "ExecutionTargetEnvelope",
+    "ExecutorName",
     "LaneAlternative",
     "LaneDecision",
     "RuntimeBinding",

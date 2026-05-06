@@ -201,12 +201,13 @@ def test_architect_role_via_claude_cli_opus_constructs():
         provider="anthropic",
         model="opus",
     )
+    from cxrp.contracts import ExecutorName
     req = ExecutionRequest(
         request_id="erq-arch-1",
         proposal_id="tp-arch-1",
         lane_decision_id="ld-arch-1",
         lane=LaneType.CODING_AGENT,
-        executor="kodo",
+        executor=ExecutorName.CLAUDE_CLI,
         scope="design auth subsystem",
         runtime_binding=binding,
     )

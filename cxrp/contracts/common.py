@@ -9,7 +9,7 @@ from typing import Any, Optional
 
 @dataclass
 class BaseContract:
-    schema_version: str = "0.2"
+    schema_version: str = "0.3"
     contract_kind: str = ""
     created_at: Optional[datetime] = None
     metadata: dict[str, Any] = field(default_factory=dict)

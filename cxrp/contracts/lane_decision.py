@@ -7,14 +7,15 @@ from typing import Optional
 
 from cxrp.contracts.common import BaseContract
 from cxrp.contracts.execution_target import ExecutionTargetEnvelope
+from cxrp.vocabulary.executor import BackendName, ExecutorName
 from cxrp.vocabulary.lane import LaneType
 
 
 @dataclass
 class LaneAlternative:
     lane: LaneType
-    executor: Optional[str] = None
-    backend: Optional[str] = None
+    executor: Optional[ExecutorName] = None
+    backend: Optional[BackendName] = None
     confidence: float = 0.0
     reason: str = ""
 
@@ -29,8 +30,8 @@ class LaneDecision(BaseContract):
     decision_id: str = ""
     proposal_id: str = ""
     lane: LaneType = LaneType.CODING_AGENT
-    executor: Optional[str] = None
-    backend: Optional[str] = None
+    executor: Optional[ExecutorName] = None
+    backend: Optional[BackendName] = None
     rationale: str = ""
     confidence: float = 1.0
     alternatives: list[LaneAlternative] = field(default_factory=list)

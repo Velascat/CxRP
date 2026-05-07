@@ -5,6 +5,8 @@ _Not a task tracker — that's backlog.md. Keep entries concise and dated._
 
 ## Stop Points
 
+- docs/README.md index added (2026-05-07, on `main`): Required by Custodian R6 (newly landed). Indexes spec/ (v0.1, v0.2, execution_target), architecture/ (boundary_rules, compatibility, lifecycle), and integrations/ (operations_center, operator_console, switchboard).
+
 - pyproject description had wrong protocol expansion (2026-05-06, on `main`): pyproject.toml said "Contract × Request Protocol" but every other surface (README, GitHub description, internal docs) uses "Contract eXecution Routing Protocol". Fixed for consistency on PyPI metadata.
 
 - Schema 0.3 — symmetry pass: typed backend/executor on the wire (2026-05-05, on `main`): Closed-system simplification — every CxRP consumer is ours, so the "open strings on the wire" flexibility wasn't paying for itself. New `cxrp/vocabulary/executor.py` ships `BackendName` + `ExecutorName` enums with values matching OC's same-named enums. `LaneDecision` and `ExecutionRequest` and `ExecutionTargetEnvelope` all use the typed enums for backend/executor. Schema bumped 0.2 → 0.3; v0.2 frozen on disk; new v0.3 schemas with explicit enum constraints in JSON. Examples migrated to v0.3 directory. The flipped test that previously asserted "open strings at envelope level" now asserts the typed-enum rejection. 51 → 59 tests still pass; backwards-compat is at the version boundary, not within 0.3.

@@ -23,6 +23,7 @@ _Not a task tracker — that's backlog.md. Keep entries concise and dated._
 
 | Decision | Rationale | Date |
 |----------|-----------|------|
+| ShippingForm enum added to vocabulary | Canonical vocabulary for how a contribution is delivered (pr/patch/branch/artifact/commit); avoids open strings in CxRP contract shipping-form fields | 2026-05-08 |
 | CxrpExecutionResult typed deserialization | parse_execution_result(payload) validates and returns typed object; summarize_execution_result() now takes typed object not raw dict; T2 exclusion removed since tests now have real assertions | 2026-05-02 |
 | C16 encoding fix in json_schema.py | 2× schema_path.read_text() missing encoding= keyword; Custodian C16 finding resolved | 2026-05-02 |
 

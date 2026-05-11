@@ -14,7 +14,7 @@
     "goal_text": "Guard User.email access in UserSerializer; add a regression test.",
     "constraints_text": "do not modify migrations; preserve existing public API",
     "repo_key": "velascat/api-service",
-    "clone_url": "https://github.com/Velascat/api-service.git",
+    "clone_url": "https://github.com/ProtocolWarden/api-service.git",
     "base_branch": "main",
     "task_branch": "fix/user-serializer-null-email",
     "workspace_path": "/var/oc/workspaces/erq-001",

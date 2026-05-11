@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """Runtime vocabulary — kinds and selection modes for RuntimeBinding.
 
 A RuntimeBinding answers *what powers the executor* — CLI subscription,

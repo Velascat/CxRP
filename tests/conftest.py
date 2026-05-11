@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 import sys
 import warnings
 from pathlib import Path

@@ -10,7 +10,7 @@
   "artifacts": [
     {"kind": "diff", "uri": "file:///var/oc/workspaces/erq-001/changes.diff", "description": "patch produced by claude_cli"},
     {"kind": "branch_ref", "uri": "git:///fix/user-serializer-null-email"},
-    {"kind": "pr_url", "uri": "https://github.com/Velascat/api-service/pull/482"},
+    {"kind": "pr_url", "uri": "https://github.com/ProtocolWarden/api-service/pull/482"},
     {"kind": "validation_report", "uri": "file:///var/oc/workspaces/erq-001/validation.json"},
     {"kind": "log", "uri": "file:///var/oc/workspaces/erq-001/run.log"}
   ],

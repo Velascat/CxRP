@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """ExecutorName + BackendName — typed executor/backend vocabulary.
 
 Schema 0.3 (introduced 2026-05-05) replaces v0.2's open-string

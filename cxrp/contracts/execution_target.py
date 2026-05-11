@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """ExecutionTargetEnvelope — the named CxRP wire-level execution target.
 
 Groups lane + backend + executor + runtime_binding under one explicit

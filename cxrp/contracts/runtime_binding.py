@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """RuntimeBinding — what powers an executor for a given request.
 
 Distinct from `executor` (the system that performs the work) and from

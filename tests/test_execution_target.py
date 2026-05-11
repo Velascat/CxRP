@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """ExecutionTargetEnvelope — Phase 2 wire-shape tests."""
 from __future__ import annotations
 

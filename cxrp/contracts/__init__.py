@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 from cxrp.contracts.common import ExecutionLimits
 from cxrp.contracts.evidence import Evidence
 from cxrp.contracts.execution_request import ExecutionRequest

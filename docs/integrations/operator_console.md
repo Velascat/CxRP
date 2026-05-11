@@ -33,4 +33,4 @@ compatibility is OC's concern at the read/write boundary.
 ## Related
 
 - [boundary_rules](../architecture/boundary_rules.md)
-- [OperatorConsole/docs/pipeline.md](https://github.com/Velascat/OperatorConsole/blob/main/docs/pipeline.md) — execution pipeline commands (run / last / runs)
+- [OperatorConsole/docs/pipeline.md](https://github.com/ProtocolWarden/OperatorConsole/blob/main/docs/pipeline.md) — execution pipeline commands (run / last / runs)

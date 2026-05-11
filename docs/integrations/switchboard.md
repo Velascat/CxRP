@@ -32,4 +32,4 @@ for `LaneDecision.execution_target`.
 ## Related
 
 - [boundary_rules](../architecture/boundary_rules.md)
-- [SwitchBoard/docs/routing/](https://github.com/Velascat/SwitchBoard/tree/main/docs/routing) — routing internals (out of CxRP scope)
+- [SwitchBoard/docs/routing/](https://github.com/ProtocolWarden/SwitchBoard/tree/main/docs/routing) — routing internals (out of CxRP scope)

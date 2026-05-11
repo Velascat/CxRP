@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """RuntimeBinding tests — validity table + optional-field allow-list."""
 from __future__ import annotations
 

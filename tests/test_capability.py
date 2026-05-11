@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """CapabilitySet tests + naming guardrails.
 
 The guardrail test rejects capability names that smuggle quantifier or

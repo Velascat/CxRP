@@ -12,7 +12,7 @@
   "risk_level": "low",
   "target": {
     "repo_key": "velascat/api-service",
-    "clone_url": "https://github.com/Velascat/api-service.git",
+    "clone_url": "https://github.com/ProtocolWarden/api-service.git",
     "base_branch": "main"
   },
   "constraints": ["do not modify migrations", "preserve existing public API"],

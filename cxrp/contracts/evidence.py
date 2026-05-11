@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """Evidence — normalized result detail returned by an executor.
 
 Carries the structured fields every backend must populate (files_changed,

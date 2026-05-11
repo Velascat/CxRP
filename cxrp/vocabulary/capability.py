@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """CapabilitySet — coarse permission classes for executor backends.
 
 Capabilities answer "may?" — they are coarse permission categories.

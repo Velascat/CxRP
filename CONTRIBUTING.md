@@ -11,7 +11,7 @@ CxRP is a **contract-only specification** defining the shared language exchanged
 ## Development Setup
 
 ```bash
-git clone https://github.com/Velascat/CxRP.git
+git clone https://github.com/ProtocolWarden/CxRP.git
 cd CxRP
 python3 -m venv .venv
 source .venv/bin/activate

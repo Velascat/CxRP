@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# Copyright (C) 2026 Velascat
+# Copyright (C) 2026 ProtocolWarden
 """Tests for the Evidence sub-contract on ExecutionResult."""
 from __future__ import annotations
 

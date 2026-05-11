@@ -57,3 +57,8 @@ truth; pre-push catches regressions before they hit GitHub.
 
 ## 2026-05-08 — CI fix: Direct URL pip install syntax
 
+
+## 2026-05-10 — GitHub username migration
+
+- Updated repo-owned references from `Velascat` to `ProtocolWarden` after the GitHub account rename.
+- Scope: license headers, GitHub URLs, workflow install commands, manifests, dependency URLs, examples, and local owner defaults where present.
